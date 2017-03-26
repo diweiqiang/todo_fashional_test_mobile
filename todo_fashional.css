@@ -15,9 +15,9 @@
     background: linear-gradient(to left, #c0c0aa , #1ce);
 }*/
 
-body{
-    max-height:100vh;
-    min-height:100vh;
+html,body{
+    max-height:60vh;
+    min-height:60vh;
     overflow: hidden;
     border:1px solid transparent;
     box-sizing: border-box;
