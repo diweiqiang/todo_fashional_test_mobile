@@ -5,6 +5,8 @@ var startX;
 var startY;
 var moveEndX;
 var moveEndY;
+var timeStart=0;
+var timeEnd=0;
 
 for(var i=0,len=localStorage.length;i<len;i++)
 {
@@ -24,7 +26,10 @@ $('h1 i').on('touchend',function () {
 });
 
 $('li').on('touchend',function () {
- $(this).toggleClass('completed');
+    timeEnd=Date.now();
+    if((timeEnd-timeStart)<300){
+        $(this).toggleClass('completed');
+    }
  });
 
 $('#addbtn').on('touchend',function () {
@@ -42,6 +47,8 @@ $('li').on('touchstart',function (e) {
  //e.preventDefault();
  startX=e.originalEvent.changedTouches[0].pageX;
  startY=e.originalEvent.changedTouches[0].pageY;
+
+ timeStart=Date.now();
  });
 
  $('li').on('touchmove',function (e) {
@@ -53,7 +60,7 @@ $('li').on('touchstart',function (e) {
 
  if (Math.abs(X)>Math.abs(Y) && X>0)
  {
- $(this).find('span').css({width:'2.5em',opacity:'1'});
+ $(this).find('span').css({width:'3.5em',opacity:'1'});
  }
  else if(Math.abs(X)>Math.abs(Y) && X<0)
  {
