@@ -16,8 +16,9 @@
 }*/
 
 body{
-    max-height:75vh;
-    min-height:75vh;
+    max-height:100vh;
+    min-height:100vh;
+    overflow: hidden;
     border:1px solid transparent;
     box-sizing: border-box;
     background: linear-gradient(to left, #c0c0aa , #1ce);
