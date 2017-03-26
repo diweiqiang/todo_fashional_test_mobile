@@ -19,8 +19,8 @@ html,body{
     /*max-height:60vh;
     min-height:60vh;*/
     overflow: hidden;
-    border:1px solid transparent;
-    box-sizing: border-box;
+    /*border:1px solid transparent;
+    box-sizing: border-box;*/
     background: linear-gradient(to left, #c0c0aa , #1ce);
 }
 #container{
@@ -41,7 +41,7 @@ h1{
     height:2.5em;
     text-transform: uppercase;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 h1 i{
