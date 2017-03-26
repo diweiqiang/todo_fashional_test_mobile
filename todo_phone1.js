@@ -25,6 +25,17 @@ $('h1 i').on('touchend',function () {
     $('.slide input').focus();
 });
 
+$('.slide input').keyup(function (e) {
+    if($(this).val()!='')
+    {
+        $('#addbtn').removeAttr('disabled');
+    }
+    else
+    {
+        $('#addbtn').attr('disabled','true');
+    }
+});
+
 $('li').on('touchend',function () {
     timeEnd=Date.now();
     if((timeEnd-timeStart)<300){
