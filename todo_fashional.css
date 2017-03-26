@@ -24,7 +24,7 @@ html,body{
     background: linear-gradient(to left, #c0c0aa , #1ce);
 }
 #container{
-    width:660px;
+    width:760px;
     margin:100px auto;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     background: #fafafa;
@@ -52,7 +52,7 @@ ul{
     cursor: pointer;
     background: white;
     height: 3.5em;
-    line-height: 2.5em;
+    line-height: 3.5em;
     font-family: josefin,lean, serif;
     font-size: 3em;
     color: #666;
@@ -81,14 +81,14 @@ li span{
     color:white;
     background: #e74c3c;
     width: 0;
-    height: 2.5em;
+    height: 3.5em;
     margin-right: 20px;
     transition: width 0.5s ease,opacity .5s;
     text-align: center;
     opacity: 0;
 }
 li:hover span{
-    width: 2.5em;
+    width: 3.5em;
     opacity: 1;
 }
 
