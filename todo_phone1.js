@@ -38,7 +38,7 @@ $('.slide input').keyup(function (e) {
 
 $('li').on('touchend',function () {
     timeEnd=Date.now();
-    if((timeEnd-timeStart)<300){
+    if((timeEnd-timeStart)<150){
         $(this).toggleClass('completed');
     }
  });
@@ -72,7 +72,7 @@ $('li').on('touchstart',function (e) {
 
  if (Math.abs(X)>Math.abs(Y) && X>0)
  {
- $(this).find('span').css({width:'3.5em',opacity:'1'});
+ $(this).find('span').css({width:'2.5em',opacity:'1'});
  }
  else if(Math.abs(X)>Math.abs(Y) && X<0)
  {

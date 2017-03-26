@@ -24,7 +24,7 @@ html,body{
     background: linear-gradient(to left, #c0c0aa , #1ce);
 }
 #container{
-    width:760px;
+    width:100%;
     margin:100px auto;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     background: #fafafa;
@@ -37,21 +37,22 @@ h1{
     color:white;
     margin: 0;
     /*padding: 10px 20px;*/
-    line-height: 2.8em;
-    height:2.8em;
+    line-height: 2.5em;
+    height:2.5em;
     text-transform: uppercase;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 h1 i{
     cursor: pointer;
-    font-size: 2.5em !important;
-    margin-left: 25px;
+    font-size: 2em !important;
+    margin-left: 15px;
     margin-right: 5px;
 }
-h1 button{
-    margin-left: 50px;
+h1 button.btn{
+    margin-left: 20px;
+    font-size: 1em;
 }
 ul{
     list-style: none;
@@ -61,10 +62,10 @@ ul{
 #container li{
     cursor: pointer;
     background: white;
-    height: 3.5em;
-    line-height: 3.5em;
+    height: 2.5em;
+    line-height: 2.5em;
     font-family: josefin,lean, serif;
-    font-size: 3em;
+    font-size: 2em;
     color: #666;
 }
 #container li:nth-child(2n){
@@ -91,14 +92,14 @@ li span{
     color:white;
     background: #e74c3c;
     width: 0;
-    height: 3.5em;
+    height: 2.5em;
     margin-right: 20px;
     transition: width 0.5s ease,opacity .5s;
     text-align: center;
     opacity: 0;
 }
 li:hover span{
-    width: 3.5em;
+    width: 2.5em;
     opacity: 1;
 }
 
