@@ -34,13 +34,14 @@ $('li').on('touchend',function () {
 
 $('#addbtn').on('touchend',function () {
     var test1=$('.slide input').val();
- var newItem='<li id="todo'+(++length)+'"><span onclick="remove(event,this)"><i class="fa fa-trash-o"></i></span>'+
-     test1+'</li>';
- $('.todo-items').append(newItem);
- $('.todo-items li:last-child span').click(remove);
- $('.slide input').val('');
+    if(test1=='') return;
+    var newItem='<li id="todo'+(++length)+'"><span onclick="remove(event,this)"><i class="fa fa-trash-o"></i></span>'+
+        test1+'</li>';
+    $('.todo-items').append(newItem);
+    $('.todo-items li:last-child span').click(remove);
+    $('.slide input').val('');
 
- localStorage.setItem('todo'+length,newItem);
+    localStorage.setItem('todo'+length,newItem);
  });
 
 $('li').on('touchstart',function (e) {
