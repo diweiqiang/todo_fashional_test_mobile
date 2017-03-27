@@ -36,12 +36,7 @@ $('.slide input').keyup(function (e) {
     }
 });
 
-$('li').on('touchend',function () {
-    timeEnd=Date.now();
-    if((timeEnd-timeStart)<150){
-        $(this).toggleClass('completed');
-    }
- });
+$('li').on('touchend',completed);
 
 $('#addbtn').on('touchend',function () {
     var test1=$('.slide input').val();
@@ -49,38 +44,49 @@ $('#addbtn').on('touchend',function () {
     var newItem='<li id="todo'+(++length)+'"><span onclick="remove(event,this)"><i class="fa fa-trash-o"></i></span>'+
         test1+'</li>';
     $('.todo-items').append(newItem);
-    $('.todo-items li:last-child span').click(remove);
+    $('.todo-items li:last-child span').click(remove).parent().on('touchend',completed).on('touchstart',touchstart).on('touchmove',touchmove);
     $('.slide input').val('');
 
     localStorage.setItem('todo'+length,newItem);
  });
 
-$('li').on('touchstart',function (e) {
- //e.preventDefault();
- startX=e.originalEvent.changedTouches[0].pageX;
- startY=e.originalEvent.changedTouches[0].pageY;
+$('li').on('touchstart',touchstart);
 
- timeStart=Date.now();
- });
-
- $('li').on('touchmove',function (e) {
- //e.preventDefault();
- moveEndX=e.originalEvent.changedTouches[0].pageX;
- moveEndY=e.originalEvent.changedTouches[0].pageY;
- X=moveEndX-startX;
- Y=moveEndY-startY;
-
- if (Math.abs(X)>Math.abs(Y) && X>0)
- {
- $(this).find('span').css({width:'2.5em',opacity:'1'});
- }
- else if(Math.abs(X)>Math.abs(Y) && X<0)
- {
- $(this).find('span').css({width:'0',opacity:'0'});
- }
- });
+ $('li').on('touchmove',touchmove);
 
  $('li span').on('touchend',remove);
+
+ function completed() {
+     timeEnd=Date.now();
+     if((timeEnd-timeStart)<150){
+         $(this).toggleClass('completed');
+     }
+ }
+
+ function touchstart(e) {
+     //e.preventDefault();
+     startX=e.originalEvent.changedTouches[0].pageX;
+     startY=e.originalEvent.changedTouches[0].pageY;
+
+     timeStart=Date.now();
+ }
+
+ function touchmove(e) {
+     //e.preventDefault();
+     moveEndX=e.originalEvent.changedTouches[0].pageX;
+     moveEndY=e.originalEvent.changedTouches[0].pageY;
+     X=moveEndX-startX;
+     Y=moveEndY-startY;
+
+     if (Math.abs(X)>Math.abs(Y) && X>0)
+     {
+         $(this).find('span').css({width:'2.5em',opacity:'1'});
+     }
+     else if(Math.abs(X)>Math.abs(Y) && X<0)
+     {
+         $(this).find('span').css({width:'0',opacity:'0'});
+     }
+ }
 
 function remove() {
     var item=$(this).parent().attr('id');
